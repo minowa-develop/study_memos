@@ -6,6 +6,24 @@
 
 ----------------------------------
 
+## 既存のdirにrepositoryをセット
+
+`git remort add origin ${URL}`
+
+----------------------------------
+
+## レポジトリのブランチを紐づける
+
+### 確認
+
+`git branch -vv`
+
+### 設定
+
+`git branch -u origin/${BRANCH}`
+
+----------------------------------
+
 ## branch
 
 ### branch list by localrepository only
@@ -27,6 +45,10 @@
 ----------------------------------
 
 ## pull
+
+## pull
+
+`git pull origin ${BRANCH}`
 
 ### fetch
 
