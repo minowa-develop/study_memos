@@ -46,7 +46,7 @@
 
 ## pull
 
-## pull
+### pull
 
 `git pull origin ${BRANCH}`
 
