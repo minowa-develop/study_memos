@@ -90,8 +90,7 @@
 1. `git branch -vv`
 1. `git branch -u "origin/${BRANCH}"`
 
-## ブランチ作成のながれ
+### ブランチ作成のながれ
 
 1. `git checkout -b "${BRANCH}" origin/{SRC_BRANCH};git push -u origin "${BRANCH}"`
 2. `git add *;git commit "${MESSAGE}";git push`
-3. 
