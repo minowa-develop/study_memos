@@ -94,3 +94,8 @@
 
 1. `git checkout -b "${BRANCH}" origin/{SRC_BRANCH};git push -u origin "${BRANCH}"`
 2. `git add *;git commit "${MESSAGE}";git push`
+
+### Stash関係
+
+スタッシュに隠す: `git stash`
+戻す: `git stash pop`
