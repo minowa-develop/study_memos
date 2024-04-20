@@ -12,7 +12,7 @@ pdbedit -a smb_user
 
 # 共有ディレクトリ作成
 mkdir /tmp/smb_public
-chown nobody: /tmp/smb_public
+chmod 777 /tmp/smb_public
 
 # SMB設定変更
 sed -iE "s/workgroup = .*/workgroup = WORKGROUP/" /etc/samba/smb.conf
