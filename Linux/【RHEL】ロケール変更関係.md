@@ -1,6 +1,7 @@
 # ロケール変更関係
 
 ## 現状のロケール確認
+
 ```plain
 $ localectl status
    System Locale: LANG=en_US.UTF-8
@@ -17,6 +18,7 @@ $ localectl status
 `less /etc/locale.conf`
 
 ## 反映
+
 `source /etc/locale.conf`
 
 lsやviの文字が日本語になったりするかも

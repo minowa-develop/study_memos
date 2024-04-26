@@ -1,6 +1,6 @@
 # Background系commands
 
-コマンドラインの末尾に`$`をつけることでbackground実行される
+コマンドラインの末尾に`&`をつけることでbackground実行される
 
 ## command
 

@@ -1,4 +1,4 @@
-Linux起動時の流れ
+# Linux起動時の流れ
 
 1. 電源投入
 1. BIOS/UEFIの起動

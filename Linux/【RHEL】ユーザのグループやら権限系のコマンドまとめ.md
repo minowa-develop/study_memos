@@ -7,6 +7,7 @@
 `groupadd <GROUP>`
 
 ### グループ削除
+
 `groupdel <GROUP>`
 
 -----------------------------
