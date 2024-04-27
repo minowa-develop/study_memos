@@ -45,3 +45,26 @@ vi /etc/samba/smb.conf
         create mask = 765
         directory mask = 775
 ```
+
+## sambaリソースをマウントする
+
+```bash
+#!/bin/bash
+
+# constant
+SAMBA_HOST="192.168.0.65"
+
+# 共有ディレクトリ
+SAMBA_PATH="smb_share"
+MOUNT_PATH="/mnt/smb_share/"
+mkdir "${MOUNT_PATH}"
+mount -t cifs "//${SAMBA_HOST}/${SAMBA_PATH}" "${MOUNT_PATH}"
+
+# user home
+MOUNT_PATH="/mnt/smb_home/"
+USER="smb_test"
+SAMBA_PATH=$USER
+PASS="test"
+mkdir "${MOUNT_PATH}"
+mount -t cifs -o "username=${USER},password=${PASS}" "//${SAMBA_HOST}/${USER}" "${MOUNT_PATH}"
+```
