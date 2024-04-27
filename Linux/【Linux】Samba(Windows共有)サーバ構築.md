@@ -46,25 +46,27 @@ vi /etc/samba/smb.conf
         directory mask = 775
 ```
 
-## sambaリソースをマウントする
+## sambaリソースをマウントする(cifs-utils無し)
+
+基本的ににcifs-utilsを入れておいたほうがよい、ドメイン名指定が可能だったり、パスワードをコマンドラインに記載しなくていいので安全、
+下記のコマンドはcifs-utils無い場合なのである場合は`,password=${PASS}`を取り除いてください
 
 ```bash
 #!/bin/bash
 
 # constant
 SAMBA_HOST="192.168.0.65"
+USER="smb_test"
+PASS="test"
 
 # 共有ディレクトリ
 SAMBA_PATH="smb_share"
 MOUNT_PATH="/mnt/smb_share/"
 mkdir "${MOUNT_PATH}"
-mount -t cifs "//${SAMBA_HOST}/${SAMBA_PATH}" "${MOUNT_PATH}"
+mount -t cifs -o "username=${USER},password=${PASS}" "//${SAMBA_HOST}/${SAMBA_PATH}" "${MOUNT_PATH}"
 
 # user home
 MOUNT_PATH="/mnt/smb_home/"
-USER="smb_test"
-SAMBA_PATH=$USER
-PASS="test"
 mkdir "${MOUNT_PATH}"
 mount -t cifs -o "username=${USER},password=${PASS}" "//${SAMBA_HOST}/${USER}" "${MOUNT_PATH}"
 ```
