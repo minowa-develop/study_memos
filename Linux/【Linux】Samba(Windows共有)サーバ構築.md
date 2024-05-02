@@ -64,9 +64,4 @@ SAMBA_PATH="smb_share"
 MOUNT_PATH="/mnt/smb_share/"
 mkdir "${MOUNT_PATH}"
 mount -t cifs -o "username=${USER},password=${PASS}" "//${SAMBA_HOST}/${SAMBA_PATH}" "${MOUNT_PATH}"
-
-# user home
-MOUNT_PATH="/mnt/smb_home/"
-mkdir "${MOUNT_PATH}"
-mount -t cifs -o "username=${USER},password=${PASS}" "//${SAMBA_HOST}/${USER}" "${MOUNT_PATH}"
 ```
