@@ -38,10 +38,24 @@ vgreduce --removemissing --force raid_grp
 
 ## LV構造変更
 
-### リニアをミラーリングに変える
+### HDD1台からミラーリングに変更
 
-`lvconvert -m1 raid_grp/raid_lvm`
+```bash
+# HDD1台構成
+pvcreate /dev/sdb
+vgcreate raid_grp /dev/sdb
+lvcreate -n raid_lvm -l100%FREE raid_grp
 
-### ミラーリングからリニアに変更
+# PVS追加
+pvcreate /dev/sdc
+vgextend raid_grp /dev/sdc
 
-`lvconvert -m0 raid_grp/raid_lvm`
+# ミラーリング対応
+lvresize -l49%vg raid_grp/raid_lvm
+lvconvert -m1 raid_grp/raid_lvm
+lvresize -l100%PVS raid_grp/raid_lvm
+```
+
+### ミラーリングからHDD1台構成に変更
+
+`lvconvert -m0 raid_grp/raid_lvm /dev/sdb`
