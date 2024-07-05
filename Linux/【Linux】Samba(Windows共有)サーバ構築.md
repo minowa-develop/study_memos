@@ -65,3 +65,23 @@ MOUNT_PATH="/mnt/smb_share/"
 mkdir "${MOUNT_PATH}"
 mount -t cifs -o "username=${USER},password=${PASS}" "//${SAMBA_HOST}/${SAMBA_PATH}" "${MOUNT_PATH}"
 ```
+
+## cifsの自動マウント方法
+
+cifsutils必須
+
+```bash
+#!/bin/bash
+
+# constant(上記のconstantを継承)
+CREDENTIALS_FILE=/etc/smb_credentials/.samba
+
+# credentialファイル作成
+cat <<< "
+username=${USER}
+password=${PASS}
+" > ${CREDENTIALS_FILE}
+
+# fstab書き込み
+echo "//${SAMBA_HOST}/${SAMBA_PATH} ${MOUNT_PATH}      cifs    nofail,_netdev,x-systemd.automount,credentials=${CREDENTIALS_FILE}      0 0" >> /etc/fstab
+```
