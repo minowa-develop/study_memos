@@ -51,6 +51,9 @@ lvdisplay
 mkfs -t ext4 /dev/mapper/lvg--share-public
 mount /dev/mapper/lvg--share-public /mnt/test
 
+# システムファイルに反映する(既存のLVを拡張する場合)
+xfs_growfs /mount/point
+
 # 自動マウント
 echo "/dev/mapper/lvg--share-public /mnt/test   ext4    defaults    0 0" >> /etc/fstab
 ```
