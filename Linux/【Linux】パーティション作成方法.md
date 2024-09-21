@@ -58,6 +58,12 @@ xfs_growfs /mount/point
 echo "/dev/mapper/lvg--share-public /mnt/test   ext4    defaults    0 0" >> /etc/fstab
 ```
 
+## フォーマット済みの論理ボリュームのサイズを変更
+
+```bash
+lvresize --resizefs /dev/test/lvol0 -l50%PV
+```
+
 ### 各リレーション
 
 パーティション 1-1 物理ボリューム 1*-1 ボリュームグループ 1-1* 論理ボリューム
