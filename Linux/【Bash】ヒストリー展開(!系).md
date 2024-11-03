@@ -9,6 +9,15 @@ command|desc
 !-n|n回前のコマンド実行
 !-n:x|n回前のコマンドのx番目の引数
 
+## Example
+
+`echo aaa bbb ccc ddd`
+
+echo|aaa|bbb|ccc|ddd
+-|-|-|-|-
+0|1|2|3|4
+-|^|-|-|$
+
 ## 検証
 
 ```bash
