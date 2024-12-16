@@ -85,3 +85,20 @@ password=${PASS}
 # fstab書き込み
 echo "//${SAMBA_HOST}/${SAMBA_PATH} ${MOUNT_PATH}      cifs    nofail,_netdev,x-systemd.automount,credentials=${CREDENTIALS_FILE}      0 0" >> /etc/fstab
 ```
+
+## sambaでファイルにアクセスできない場合
+
+samba自体は構築出来てて該当のディレクトリ、ファイルのみがアクセスできない場合に対応
+
+### DAC権限
+
+chmod -R 774 /smb_share/${targer}
+chown -R root:samba /smb_share/${target}
+
+### MAC権限(SELinux)
+
+chcon -r -t samba_share_t /smb_share/${target}
+
+### user group(グループでDACする場合)
+
+grep ${user} /etc/group
