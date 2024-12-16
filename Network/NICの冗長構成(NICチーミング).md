@@ -28,4 +28,4 @@
 - NICチーミング: L2-3層
 - MPTCP: L4層、TCPの拡張プロトコル
 
-参考: <https://www.infraexpert.com/study/etherchannel1.html
+参考: <https://www.infraexpert.com/study/etherchannel1.html>
