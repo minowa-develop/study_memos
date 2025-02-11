@@ -2,7 +2,7 @@
 
 ## NICチーミングとは
 
-物理NICをまとめて1つの仮想NICとして動作する、Switchは物理NIC分必要
+物理NICをまとめて1つの仮想NICとして動作する、LinkAggregate以外はSwitchは物理NIC分必要
 
 ## NICチーミングの種類
 
