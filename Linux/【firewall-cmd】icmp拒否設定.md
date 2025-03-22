@@ -1,4 +1,4 @@
-#　ICMPのブロック
+# ICMPのブロック
 
 firewall-cmdでの説明となる
 
