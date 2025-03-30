@@ -2,7 +2,8 @@
 
 1. 電源投入
 1. BIOS/UEFIの起動
-1. ブートローダ（GRUB,GRUB2..）
+1. MBR,GPT読み込み(stage 1)
+1. ブートローダ実行(stage 2)
 1. カーネル（vmlinuz）とinitramfs（初期RAMディスク）の読み込み
 1. カーネルの実行
 1. initramfs（初期RAMディスク）の実行
