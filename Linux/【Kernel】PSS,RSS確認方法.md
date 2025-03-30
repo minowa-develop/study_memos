@@ -6,9 +6,9 @@
 
 名称|command
 -|-
-psコマンド|`ps u -p${pid} | awk '{sum += $6}END{print sum}'`
+psコマンド|`ps u -p${pid} \| awk '{sum += $6}END{print sum}'`
 smapsファイル|`awk '/^Rss/{sum+=$2}END{print sum}' /proc/${pid}/smaps`
-pmapコマンド|`pmap ${pid} -x | tail -1 | awk '{print $4}'`
+pmapコマンド|`pmap ${pid} -x \| tail -1 \| awk '{print $4}'`
 
 ## 検証
 
