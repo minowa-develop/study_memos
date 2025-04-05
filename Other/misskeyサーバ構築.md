@@ -30,7 +30,7 @@ systemctl enable redis --now
 dnf install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm -y
 dnf install postgresql16-server -y
 
-# initialyze postgresql (su以外はposgreユーザーで実行)
+# initialyze postgresql
 su - postgres
 /usr/pgsql-16/bin/initdb -E UTF8 --locale=C -A scram-sha-256 -W
 sudo -u postgres /usr/pgsql-16/bin/initdb -D /var/lib/pgsql/16/data -E UTF8 --locale=C -A scram-sha-256 -W
