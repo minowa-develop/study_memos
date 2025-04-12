@@ -24,3 +24,9 @@ NICが一つしかなくてもIPv6リンクローカルアドレスの仕様に�
 ### example for ssh
 
 `ssh root@fe80::a00:27ff:fe96:6c67%enp0s3`
+
+## windowsの場合はインターフェース番号を指定する
+
+インターフェース番号確認方法
+
+`netsh interface ipv6 show interfaces`
