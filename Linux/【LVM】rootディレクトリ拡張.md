@@ -4,7 +4,7 @@
 #!/bin/bash
 
 ADD_DEV=/dev/sdb
-TARGET_VG=almalimux
+TARGET_VG=almalinux
 TARGET_LV=root
 
 # pre status
@@ -13,7 +13,7 @@ df -Th
 
 # main work
 pvcreate ${ADD_DEV}
-vgextended ${TARGET_VG} ${ADD_DEV}
+vgextend ${TARGET_VG} ${ADD_DEV}
 lvresize -l100%vg "/dev/${TARGET_VG}/${TARGET_LV}"
 xfs_growfs "/dev/${TARGET_VG}/${TARGET_LV}"
 
